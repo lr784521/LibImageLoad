@@ -1,0 +1,3 @@
+rootProject.name = "LibImageLoad"
+include ':app'
+include ':lib_imgload'
