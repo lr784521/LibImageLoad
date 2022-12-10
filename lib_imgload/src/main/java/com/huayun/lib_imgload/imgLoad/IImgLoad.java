@@ -14,6 +14,8 @@ public interface IImgLoad {
 
     void showImg(Context context, Object img_Url, ImageView view, int round);
 
+    void showImg(Context context, Object img_Url, ImageView view, int rlt,int rrt,int rlb,int rrb);
+
     void showImg(Context context, Object img_Url, ImageView view, int placeholder, int error);
 
     void loadSmollUrl(Context mContext, String url,

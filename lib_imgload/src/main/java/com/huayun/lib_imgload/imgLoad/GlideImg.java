@@ -60,6 +60,24 @@ public class GlideImg implements IImgLoad {
     }
 
     @Override
+    public void showImg(Context context, Object img_Url, ImageView view, int rlt, int rrt, int rlb, int rrb) {
+        if (img_Url == null || view == null || context == null) {
+            return;
+        }
+
+        //设置图片圆角角度
+        RoundedCorners roundedCorners = new RoundedCorners(1);
+        RequestOptions requestOptions = RequestOptions.bitmapTransform(roundedCorners);
+        requestOptions.diskCacheStrategy(DiskCacheStrategy.ALL);   //配置磁盘缓存策略
+        requestOptions.transform(new GlideRoundTransformAll(rlt, rrt, rlb, rrb));
+
+        Glide.with(context)  // 表示某个组件需要加载图片
+                .load(img_Url)   //加载的图片地址
+                .apply(requestOptions)
+                .into(view);      // 指定显示在某个ImageView 上面
+    }
+
+    @Override
     public void showImg(Context context, Object img_Url, ImageView view, int placeholder, int error) {
         if (img_Url == null || view == null || context == null) {
             return;

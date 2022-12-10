@@ -45,6 +45,11 @@ public class ImgLoad implements IImgLoad {
     }
 
     @Override
+    public void showImg(Context context, Object img_Url, ImageView view, int rlt, int rrt, int rlb, int rrb) {
+
+    }
+
+    @Override
     public void showImg(Context context, Object img_Url, ImageView view, int placeholder, int error) {
         mImgLoad.showImg(context, img_Url, view, placeholder, error);
     }
