@@ -62,4 +62,5 @@ public class GlideRoundTransformAll extends BitmapTransformation {
 //        canvas.drawRect(rectRound, paint);
         return result;
     }
+
 }
